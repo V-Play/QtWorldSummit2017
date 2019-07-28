@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Felgo 3.0
+import QtMultimedia 5.9
 import "pages"
 import "common"
 
@@ -57,4 +58,15 @@ App {
 
   // loads and holds actual app content
   QtWSLoaderItem { id: loaderItem }
+
+    Camera {
+        id: camera
+    }
+
+    VideoOutput {
+        anchors.fill: parent
+        source: camera
+        autoOrientation: true
+        visible: false
+    }
 }
